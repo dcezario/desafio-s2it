@@ -1,0 +1,20 @@
+.upload-form {
+    width: 50%;
+    height: 300px;
+    border: 2px dashed #3498db;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.section.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.upload-form .dz-message .fa-upload {
+    display: block;
+    margin: 0 auto;
+}
