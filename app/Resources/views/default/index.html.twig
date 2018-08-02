@@ -5,11 +5,19 @@
         <div class="column is-8 is-offset-4">
             <section class="section home">
                 <div class="container">
-                    <h1 class="title">Cadastro de alunos e professores</h1>
+                    <h1 class="title">XML upload form</h1>
                     <h2 class="subtitle">Lorem Ipsum</h2>
                     <div class="upload-form">
-                        <form action="/file-upload" class="dropzone" id="dropzone">
-                            <div class="dz-message" data-dz-message><span><i class="fas fa-upload fa-lg"></i></span><p>Arraste seus arquivos para esta área</p></div>
+                        <form  enctype="multipart/form-data" method="POST" action="{{ app.request.uri }}" class="dropzonex" id="dropzonex">
+                                {{ form_widget(form._token) }}
+                            <div class="fallback"> 
+                                {{ form_widget(form.file) }}
+                                <input type="submit">
+                            </div>
+                            <div class="dz-message" data-dz-message>
+                                <i class="fas fa-upload fa-lg"></i>
+                                <p>Drag your files to here</p>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -22,11 +30,18 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="{{ asset('assets/js/dropzone.js') }}"></script>
     <script>
-        $("div#dropzone").dropzone(
-            { 
-               url: "/file/post",
-               dictDefaultMessage: "Teste"
-            }
-        );
+       $(function() {
+            var dropzone = $("div#dropzone").dropzone(
+                 { 
+                    maxFiles: 1,
+                    paramName: "xml_file[file]",
+                    previewTemplate: '<div style="display:none"></div>',
+                    createImageThumbnails: false
+                 }
+             );
+             dropzone.on("error", function() {
+                alert('file');
+             });
+         });
     </script>
 {% endblock %}

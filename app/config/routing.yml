@@ -1,3 +1,7 @@
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+file_upload:
+    path: '/file/upload/'
+    defaults: { _controller: AppBundle:File:upload }
+    methods: [POST]
