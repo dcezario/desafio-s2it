@@ -27,7 +27,7 @@ class File
      *
      * @ORM\Column(name="file", type="string", length=255)
      * @Assert\NotBlank(message="At least one file must be uploaded")
-     * @Assert\File(mimeTypes = {"text/xml"}, maxSize = "1024k", mimeTypesMessage = "Please upload a valid XML")
+     * @Assert\File(mimeTypes = {"application/xml", "text/xml"}, maxSize = "1024k", mimeTypesMessage = "Please upload a valid XML")
      */
     private $file;
 

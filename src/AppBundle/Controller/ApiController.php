@@ -60,7 +60,7 @@ class ApiController extends Controller
      */
     public function getAllTeacherAction()
     {
-        $students = $this->getDoctrine()
+        $teachers = $this->getDoctrine()
                 ->getRepository(Teacher::class)
                 ->createQueryBuilder('e')
                 ->select('e')
