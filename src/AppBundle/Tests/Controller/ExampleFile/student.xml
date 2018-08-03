@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <students>
+    <student>
+      <first_name>Student</first_name>
+      <last_name>Example</last_name>
+      <phone>00 1111 2222</phone>
+      <email>student@email.com</email>
+    </student>
+    <student>
+      <first_name>Student 2</first_name>
+      <last_name>Example 2</last_name>
+      <phone>00 1111 3223</phone>
+      <email>student2@email.com</email>
+    </student>
+  </students>

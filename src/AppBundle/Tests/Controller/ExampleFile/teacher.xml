@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <teachers>
+    <teacher>
+      <first_name>Professor 1</first_name>
+      <last_name>Example 1</last_name>
+      <email>professor@example.com</email>
+      <room>123</room>
+    </teacher>
+  </teachers>
