@@ -67,7 +67,11 @@ class DefaultController extends Controller
             }
         } else if ($form->isSubmitted() && !$form->isValid()) {
             $error = (!empty($form->getErrors()) ? $form->getErrors(true) : 'File could be uploaded');
-            return new Response($error);
+            $response['success'] = 'false';
+            $response['message']   = (string)$error;
+            $errorMessage = new Response(json_encode($response));
+            $errorMessage->headers->set('Content-Type', 'application/json');
+            return $errorMessage;
         }
         return $this->render('default/index.html.twig', [
             'form' => $form->createView()

@@ -13,3 +13,10 @@ echo "    xml_directory: '%kernel.root_dir%/../web/uploads/xml'" >> app/config/p
 php app/console server:run
 ```
 
+Tests
+-----
+
+```
+cd app/
+phpunit
+```

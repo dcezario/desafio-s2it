@@ -52,7 +52,7 @@ class ApiController extends Controller
             'phone'      => $student->getPhone(),
         );
         $response = new Response(json_encode($return));
-        
+        $response->headers->set('Content-Type', 'application/json');
         return $response;
     }
     /**
@@ -92,7 +92,7 @@ class ApiController extends Controller
             'room'      => $teacher->getRoom(),
         );
         $response = new Response(json_encode($return));
-        
+        $response->headers->set('Content-Type', 'application/json');
         return $response;
     }
 }
