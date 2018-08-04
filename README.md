@@ -13,6 +13,11 @@ echo "    xml_directory: '%kernel.root_dir%/../web/uploads/xml'" >> app/config/p
 php app/console server:run
 ```
 
+Api demo user
+-------------
+```
+INSERT INTO `user` (`id`, `username`, `apiKey`) VALUES (NULL, 'demo', 'tRLqd6JUBsKd7eVJ');
+```
 Tests
 -----
 
