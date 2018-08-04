@@ -63,7 +63,7 @@
                 } else {
                     divMessage.addClass('is-danger');
                     divMessage.removeClass('is-primary');
-                    if (typeof response.message != 'undefined'){
+                    if (typeof response.message !== 'undefined'){
                         result = response.message;
                     } else {
                         result = "Houve um problema processando seu arquivo. <br> Registros enviados:" + response.received + "<br> Registros processados: " + response.processed;
