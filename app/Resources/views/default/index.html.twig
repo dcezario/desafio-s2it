@@ -8,7 +8,7 @@
                     <h1 class="title">XML upload form</h1>
                     <h2 class="subtitle">Lorem Ipsum</h2>
                     <div class="upload-form">
-                        <form  enctype="multipart/form-data" method="POST" action="{{ app.request.uri }}" class="dropzonex" id="dropzonex">
+                        <form  enctype="multipart/form-data" method="POST" action="{{ app.request.uri }}" class="dropzone" id="dropzone">
                                 {{ form_widget(form._token) }}
                             <div class="fallback"> 
                                 {{ form_widget(form.file) }}
@@ -24,24 +24,55 @@
             </section>
         </div>
     </div>
+    <div class="column is-8 is-offset-2">
+        <article class="message" style="display:none" id="infoBox">
+            <div class="message-header">
+              <p>Resultado do processamento</p>
+              <button class="delete" aria-label="delete"></button>
+            </div>
+            <div class="message-body">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+            </div>
+       </article>
+    </div>
 {% endblock %}
 
 {% block javascripts %}
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="{{ asset('assets/js/dropzone.js') }}"></script>
     <script>
-       $(function() {
-            var dropzone = $("div#dropzone").dropzone(
-                 { 
-                    maxFiles: 1,
-                    paramName: "xml_file[file]",
-                    previewTemplate: '<div style="display:none"></div>',
-                    createImageThumbnails: false
-                 }
-             );
-             dropzone.on("error", function() {
-                alert('file');
-             });
-         });
+       $('.delete').click(function() {
+          $("#infoBox").hide();
+       });
+       Dropzone.options.dropzone = {
+           paramName: "xml_file[file]",
+           previewTemplate: '<div style="display:none"></div>',
+           init: function() {
+            this.on('addedfile', function() {
+                $("#infoBox").hide();
+            }),
+            this.on("success", function(file, response) {
+                var status = response.success;
+                var divMessage = $("#infoBox");
+                if (status == 'true') {
+                    var result = "Registros enviados: " + response.received + "<br> Registros processados: "+ response.processed;
+                    divMessage.removeClass('is-danger');
+                    divMessage.addClass('is-primary');
+                    $(".message-body").html(result);
+                    divMessage.show();
+                } else {
+                    divMessage.addClass('is-danger');
+                    divMessage.removeClass('is-primary');
+                    if (typeof response.message != 'undefined'){
+                        result = response.message;
+                    } else {
+                        result = "Houve um problema processando seu arquivo. <br> Registros enviados:" + response.received + "<br> Registros processados: " + response.processed;
+                    }
+                    $(".message-body").html(result);
+                    divMessage.show();
+                }
+            });
+          }
+       };
     </script>
 {% endblock %}
