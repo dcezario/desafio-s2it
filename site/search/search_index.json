@@ -1,0 +1,69 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "API documentation page",
+            "title": "Index"
+        },
+        {
+            "location": "/students/",
+            "text": "Students API\n\n\nAuthentication method\n\n\nTo authenticate a \nX-AUTH-TOKEN\n header must be passed\n\n\nFetch all students\n\n\nmethod: GET\nendpoint: /students\n\n\n\n\nFetch specific student\n\n\nmethod: GET\nendpoint: /student/id\n\n\n\n\nExample response\n\n\n[\n    {\n        \"id\": 1,\n        \"firstName\": \"Student\",\n        \"lastName\": \"Example\",\n        \"phone\": \"00 1111 2222\",\n        \"email\": \"student@email.com\"\n    },\n    {\n        \"id\": 2,\n        \"firstName\": \"Student 2\",\n        \"lastName\": \"Example 2\",\n        \"phone\": \"00 1111 3223\",\n        \"email\": \"student2@email.com\"\n    }\n]",
+            "title": "Students"
+        },
+        {
+            "location": "/students/#students-api",
+            "text": "",
+            "title": "Students API"
+        },
+        {
+            "location": "/students/#authentication-method",
+            "text": "To authenticate a  X-AUTH-TOKEN  header must be passed",
+            "title": "Authentication method"
+        },
+        {
+            "location": "/students/#fetch-all-students",
+            "text": "method: GET\nendpoint: /students",
+            "title": "Fetch all students"
+        },
+        {
+            "location": "/students/#fetch-specific-student",
+            "text": "method: GET\nendpoint: /student/id",
+            "title": "Fetch specific student"
+        },
+        {
+            "location": "/students/#example-response",
+            "text": "[\n    {\n        \"id\": 1,\n        \"firstName\": \"Student\",\n        \"lastName\": \"Example\",\n        \"phone\": \"00 1111 2222\",\n        \"email\": \"student@email.com\"\n    },\n    {\n        \"id\": 2,\n        \"firstName\": \"Student 2\",\n        \"lastName\": \"Example 2\",\n        \"phone\": \"00 1111 3223\",\n        \"email\": \"student2@email.com\"\n    }\n]",
+            "title": "Example response"
+        },
+        {
+            "location": "/teachers/",
+            "text": "Students API\n\n\nAuthentication method\n\n\nTo authenticate a \nX-AUTH-TOKEN\n header must be passed\n\n\nFetch all teachers\n\n\nmethod: GET\nendpoint: /teachers\n\n\n\n\nFetch specific teacher\n\n\nmethod: GET\nendpoint: /teacher/id\n\n\n\n\nExample response\n\n\n[\n    {\n        \"id\": 6,\n        \"firstName\": \"Professor 1\",\n        \"lastName\": \"Example 1\",\n        \"email\": \"professor@example.com\",\n        \"room\": \"123\"\n    },\n    {\n        \"id\": 7,\n        \"firstName\": \"Professor 1\",\n        \"lastName\": \"Example 1\",\n        \"email\": \"professor@example.com\",\n        \"room\": \"123\"\n    }\n]",
+            "title": "Teachers"
+        },
+        {
+            "location": "/teachers/#students-api",
+            "text": "",
+            "title": "Students API"
+        },
+        {
+            "location": "/teachers/#authentication-method",
+            "text": "To authenticate a  X-AUTH-TOKEN  header must be passed",
+            "title": "Authentication method"
+        },
+        {
+            "location": "/teachers/#fetch-all-teachers",
+            "text": "method: GET\nendpoint: /teachers",
+            "title": "Fetch all teachers"
+        },
+        {
+            "location": "/teachers/#fetch-specific-teacher",
+            "text": "method: GET\nendpoint: /teacher/id",
+            "title": "Fetch specific teacher"
+        },
+        {
+            "location": "/teachers/#example-response",
+            "text": "[\n    {\n        \"id\": 6,\n        \"firstName\": \"Professor 1\",\n        \"lastName\": \"Example 1\",\n        \"email\": \"professor@example.com\",\n        \"room\": \"123\"\n    },\n    {\n        \"id\": 7,\n        \"firstName\": \"Professor 1\",\n        \"lastName\": \"Example 1\",\n        \"email\": \"professor@example.com\",\n        \"room\": \"123\"\n    }\n]",
+            "title": "Example response"
+        }
+    ]
+}

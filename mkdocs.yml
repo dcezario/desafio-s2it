@@ -1,0 +1,6 @@
+site_name: S2it PHP Challenge
+theme: readthedocs
+pages:
+  - Index: index.md
+  - Students: students.md
+  - Teachers: teachers.md
