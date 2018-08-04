@@ -28,6 +28,12 @@ The two accepted models are below:
     </student>
   </students>
 ```
+API Documentation:
+------------------
+
+[https://dcezario.github.io/desafio-s2it/
+](https://dcezario.github.io/desafio-s2it/)
+
 Installation
 ------------
 
