@@ -6,7 +6,7 @@
             <section class="section home">
                 <div class="container">
                     <h1 class="title">XML upload form</h1>
-                    <h2 class="subtitle">Lorem Ipsum</h2>
+                    <h2 class="subtitle"><a href="https://github.com/dcezario/desafio-s2it/" target="_blank">Project docs</a></h2>
                     <div class="upload-form">
                         <form  enctype="multipart/form-data" method="POST" action="{{ app.request.uri }}" class="dropzone" id="dropzone">
                                 {{ form_widget(form._token) }}
@@ -66,7 +66,7 @@
                     if (typeof response.message !== 'undefined'){
                         result = response.message;
                     } else {
-                        result = "Houve um problema processando seu arquivo. <br> Registros enviados:" + response.received + "<br> Registros processados: " + response.processed;
+                        result = "Houve um problema processando seu arquivo. <br> Registros enviados: " + response.received + "<br> Registros processados: " + response.processed;
                     }
                     $(".message-body").html(result);
                     divMessage.show();

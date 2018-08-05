@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class DefaultController extends Controller
 {
@@ -63,10 +64,14 @@ class DefaultController extends Controller
                 return $response;
                 
             } catch (\Exception $e) {
-                return new Response ($e->getMessage());
+                $response = array(
+                    'success' => 'false',
+                    'message' => $e->getMessage()
+                );
+                return new JsonResponse ($response);
             }
         } else if ($form->isSubmitted() && !$form->isValid()) {
-            $error = (!empty($form->getErrors()) ? $form->getErrors(true) : 'File could be uploaded');
+            $error = (!empty($form->getErrors()) ? $form->getErrors(true) : 'File could not be uploaded');
             $response['success'] = 'false';
             $response['message']   = (string)$error;
             $errorMessage = new Response(json_encode($response));
